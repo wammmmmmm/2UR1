@@ -15,35 +15,41 @@
 
 @define-color fallback-color @white;
 
-@define-color clock-color @red;
-@define-color custom-text-color @red;
+@define-color clock-background @black;
+@define-color custom-border @white;
+@define-color custom-text @white;
 
 @define-color workspaces-active-color @white;
 @define-color workspaces-urgent-color @red;
 
-@define-color top-waybar-background @no;
-@define-color top-waybar-top-border @black;
-@define-color top-waybar-bottom-border @red;
-@define-color bottom-waybar-background @no;
-@define-color bottom-waybar-top-border @red;
-@define-color bottom-waybar-bottom-border @black;
-@define-color powerprofilesps @white;
-@define-color powerprofilesperf @white;
-@define-color powerprofilesbal @white;
-@define-color powerprofilesdaemonbackground @black;
+@define-color workspaces-background @black;
+@define-color workspaces-border @white;
+@define-color workspaces-text @white;
 
+@define-color waybar-background @no;
+@define-color waybar-top-border @no;
+@define-color waybar-bottom-border @no;
+@define-color waybar-border @no;
 
-window#waybar.top {
+@define-color ppf-powersaver-background @black;
+@define-color ppf-powersaver-border @black;
+@define-color ppf-powersaver-text @white;
+@define-color ppf-performance-background @black;
+@define-color ppf-performance-border @black;
+@define-color ppf-performance-text @white;
+@define-color ppf-balanced-background @black;
+@define-color ppf-balanced-border @black;
+@define-color ppf-balanced-text @white;
+
+@define-color middlemodules-background @black;
+@define-color middlemodules-text @white;
+
+window#waybar {
 	
-	background-color: @top-waybar-background; 
-	border-bottom: 0px solid @top-waybar-bottom-border;
-	border-top: 0px solid @top-waybar-top-border;
-}
-
-window#waybar.bottom {
-	background-color: @bottom-waybar-background; 
-	border-bottom: 0px solid @bottom-waybar-bottom-border;
-        border-top: 0px solid @bottom-waybar-top-border;
+	background-color: @waybar-background; 
+	border-bottom: 0px solid @waybar-bottom-border;
+	border-top: 0px solid @waybar-top-border;
+	border: 0px solid @waybar-border;
 }
 
 #workspaces button.active {
@@ -55,24 +61,33 @@ window#waybar.bottom {
 }
 
 #workspaces {
-	background-color: @black;
-	border-radius: 10px;
+	background-color: @workspaces-background;
+	border: 2px solid @workspaces-border;
+	color: @workspaces-text;
+	border-radius: 20px;
 }
 
-#clock { 
-	color: @white;
-	background-color: @black;
-	border-radius: 10px;
-	padding: 10px;	
-}
-
-#custom-text {
-	font-size: 16px;
-	color: @custom-text-color;
+#network,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#temperature,
+#cpu,
+#tray,
+#cava,
+#battery {
+	padding: 0 10px;
+	color: @middlemodules-background;
+	background-color: @middlemodules-text;
 }
 
 #custom-weather { 
 	font-family: TT Squares;
+}
+
+#network {
+	border-radius: 20px 0px 0px 20px; 
+	margin-left: 4px; 
 }
 
 #battery.warning:not(.charging) {
@@ -85,6 +100,11 @@ window#waybar.bottom {
 
 #battery.charging {
 	color: @good;
+}
+
+#battery {
+	border-radius: 0px 20px 20px 0px;
+	margin-right: 4px;
 }
 
 #pulseaudio.muted {
@@ -117,26 +137,38 @@ window#waybar.bottom {
 }
 
 #power-profiles-daemon.performance {
-	background-color: @powerprofilesdaemonbackground;
-        border-radius: 10px;
-        color: @powerprofilesps;
-        font-size: 16px;
+	background-color: @ppf-performance-background;
+        border-radius: 20px;
+        color: @ppf-performance-text;
+        border: 2px solid @ppf-powersaver-border;
+	font-size: 16px;
 	padding: 10px;
 }
 
 #power-profiles-daemon.balanced {
-        background-color: @powerprofilesdaemonbackground;
-        border-radius: 10px;
-        color: @powerprofilesps;
-        font-size: 16px;
+        background-color: @ppf-balanced-background;
+        border-radius: 20px;
+        color: @ppf-balanced-text;
+        border: 2px solid @ppf-powersaver-border;
+	font-size: 16px;
 	padding: 10px;
 }
 
 #power-profiles-daemon.power-saver {
-	background-color: @powerprofilesdaemonbackground;
-	border-radius: 10px;
-	color: @powerprofilesps;
+	background-color: @ppf-powersaver-background;
+	border-radius: 20px;
+	color: @ppf-powersaver-text;
+	border: 2px solid @ppf-powersaver-border;
 	font-size: 16px;
 	padding: 10px;
 }
+
+#clock { 
+	background-color: @clock-background;
+	border: 2px solid @clock-border;
+	color: @clock-text;
+	border-radius: 20px;
+	padding: 10px;	
+}
+
 
