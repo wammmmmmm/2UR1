@@ -56,11 +56,9 @@
 "hyprland/workspaces": {
         "on-click": "activate",  
         "persistent-workspaces": {
-                "4": [],
                 "2": [],
                 "1": [],
                 "3": [],
-                "5": [],
                 },
          "format": " {icon} ",
          "format-icons": {
@@ -83,7 +81,7 @@
 },
 
 "clock": {
-        "format": "📅 {:%a %d/%b/%Y  󰥔  %H:%M}",
+        "format": "📅 {:%a %d/%b/%Y  󰥔 %H:%M}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
                     "mode"          : "year",
@@ -116,10 +114,10 @@
 	},
 
 "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}%  󰂰",
-        "format-bluetooth-muted": "{volume}%  󰂲",
-        "format-muted": "{volume}%  󰝟",
+        "format": "{icon} {volume}%" ,
+        "format-bluetooth": "󰂰  {volume}%",
+        "format-bluetooth-muted": "󰂲  {volume}%",
+        "format-muted": "󰝟  {volume}%",
         "format-icons": {
             "headphone": " 󰋋",
             "hands-free": " 󰥰",
@@ -133,8 +131,8 @@
                 },
         "on-click": "kitty -e pulsemixer",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%"
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +1%"
 },
 
 "tray": {
@@ -143,29 +141,28 @@
 },
 
 "backlight": {
-        "format": "{percent}% {icon}",
+        "format": "{icon} {percent}%",
         "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "],
-        "on-scroll-up": "brightnessctl set +1%",
-        "on-scroll-down": "brightnessctl set 1%-"
+        "on-scroll-up": "brightnessctl set 1%-",
+        "on-scroll-down": "brightnessctl set +1%"
 },
 
 "network": {
-        "format-wifi": "{signalStrength}%  󰖩 ",
-        "format-ethernet": "{bandwidthDownBits}  󰈀 ",
-        "format-linked": "Wan  󰈀 ",
-        "format-disconnected": "off  󰖪 ",
-	"format-alt":"{status}  󰖪 ",
+        "format-wifi": "󰖩   {signalStrength}%",
+        "format-ethernet": "󰈀   {bandwidthDownBits}",
+        "format-linked": "󰈀   Wan",
+        "format-disconnected": "󰖪   off",
 	"on-click-right": "sh -c 'if nmcli radio wifi | grep -q \"enabled\"; then nmcli radio wifi off; else nmcli radio wifi on; fi'",
 	"format-off": "off  󰖪 ",
         "tooltip-format": "{essid}",
-        "on-click": "kitty -e nmtui",
+	"on-click": "kitty -e nmtui",
 
 },
 
 "bluetooth": {
-        "format": "{device_battery_percentage}%  󰂯 ",
-	"format-on": "on  󰂯 ",
-        "format-off": "off  󰂲 ",
+        "format": "󰂯  {device_battery_percentage}%",
+	"format-on": "󰂯  on",
+        "format-off": "󰂲  off",
         "on-click": "kitty -e bluetui",
         "on-click-right": "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on",
 	"tooltip": true ,
@@ -175,14 +172,14 @@
 "temperature": {
         "critical-threshold": 75,
         "warning-threshold": 65,
-        "format": "{temperatureC}°C  {icon} ",
+        "format": "{icon}  {temperatureC}°C",
         "format-icons": ["󱃃", "󰔏", "󱃂"],
         "on-click": "kitty -e btop",
 	"tooltip": false
 },
 
 "cpu": {
-        "format": "{usage}%   󰘚 ",
+        "format": " 󰘚   {usage}%",
         "tooltip": true,
         "interval": 5,
         "on-click": "kitty -e btop",
@@ -194,7 +191,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}%  {icon} ",
+        "format": " {icon}  {capacity}%",
         "format-charging": "   󰂄   {capacity}%     ",
         "format-plugged": "   󰚥   {capacity}%     ",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],

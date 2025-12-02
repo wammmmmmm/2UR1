@@ -33,17 +33,11 @@
 @define-color powerprofilesdaemonbackground @black;
 
 
-window#waybar.top {
+window#waybar {
 	
 	background-color: @top-waybar-background; 
 	border-bottom: 0px solid @top-waybar-bottom-border;
 	border-top: 0px solid @top-waybar-top-border;
-}
-
-window#waybar.bottom {
-	background-color: @bottom-waybar-background; 
-	border-bottom: 0px solid @bottom-waybar-bottom-border;
-        border-top: 0px solid @bottom-waybar-top-border;
 }
 
 #workspaces button.active {
