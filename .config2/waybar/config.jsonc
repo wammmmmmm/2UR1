@@ -12,7 +12,7 @@
 
 	"layer": "top",
 
-        "position": "top", // Waybar position (top|bottom|left|right)
+        "position": "bottom", // Waybar position (top|bottom|left|right)
 
         "height": 10, // remove for automatic height
 
@@ -29,17 +29,16 @@
 
 
         "modules-left": [
-        	 "power-profiles-daemon", "clock"
-        ],
+        	 
+	],
 
         "modules-center": [
-		"hyprland/workspaces"                 
-        ],
+		"power-profiles-daemon", "hyprland/workspaces", "network", "bluetooth", "pulseaudio", "backlight", "temperature", "cpu", "battery", "custom/weather", "clock", 
+	],
 
         "modules-right": [
-		"custom/weather", "network", "bluetooth", "backlight",  "temperature", "cpu", "pulseaudio", "battery",  "custom/spacing"
- 
-        ],
+		
+	],
 
 
 /////////////
@@ -84,7 +83,7 @@
 },
 
 "clock": {
-        "format": " 󰥔   {:%H:%M     📅   %a, %B %d, %Y}",
+        "format": "📅 {:%a %d/%b/%Y  󰥔  %H:%M}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
                     "mode"          : "year",
