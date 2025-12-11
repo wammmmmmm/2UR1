@@ -1,0 +1,13 @@
+# ~/.config/wofi/config
+
+show = drun
+width = 610
+height = 400
+x = 615
+y = 0
+location = center
+prompt = Aphos
+allow_markup = false
+insensitive = true
+term = foot
+

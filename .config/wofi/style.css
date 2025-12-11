@@ -1,0 +1,60 @@
+@define-color white #EAE0D5;
+@define-color beige #C6AC8F;
+@define-color brown #5E503F;
+@define-color blue #22333B;
+@define-color black #0A0908;
+
+#window {
+margin: 2px;
+border: 2px solid @white;
+background-color: rgba(34, 51, 59, 0.9);
+border-radius: 20px;
+}
+
+#input {
+margin: 15px;
+background-color: @white;
+border: 2px solid @white;
+border-radius: 20px;
+}
+
+#outer-box {
+margin: 0px;
+border: 0px solid @no;
+background-color: @no;
+}
+
+#scroll {
+margin: 0px;
+border: 0px solid @accent;
+background-color: @background;
+}
+
+#text {
+margin: 2px;
+border: 0px solid @no;
+color: @white;
+}
+
+#inner-box {
+margin: 10px;
+border: 0px solid @black;
+border-radius: 5px;
+background-color: @no;
+padding: 10px;
+opacity: .8;
+}
+
+#entry:selected{
+margin: 0px;
+border: 2px solid @beige;
+border-radius: 20px;
+background-color: @brown;
+}
+
+#expander-box{
+margin: 0px;
+border: 0px solid @beige;
+border-radius: 20px;
+background-color: @brown;
+}

@@ -12,7 +12,7 @@
 
 	"layer": "top",
 
-        "position": "bottom", // Waybar position (top|bottom|left|right)
+        "position": "top", // Waybar position (top|bottom|left|right)
 
         "height": 10, // remove for automatic height
 
@@ -70,7 +70,7 @@
 },
 
 "custom/cava": {	
-	"format": " {}",
+	"format": "{}",
 	"exec": "~aphos/.config/waybar/cava.sh",
 	"on-click": "pear-desktop",
 	"tooltip": false,
@@ -81,9 +81,9 @@
   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
   "tooltip": true,
   "format-icons": {
-    "performance": ">>>2URI⌥",
-    "balanced": ">>2UR1⌥",
-    "power-saver": ">2UR1⌥"
+    "performance": "✿",
+    "balanced": "✤",
+    "power-saver": "✣"
   }
 },
 
@@ -197,9 +197,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "  {icon}  {capacity}% ",
-        "format-charging": "  󰂄  {capacity}% ",
-        "format-plugged": "  󰚥  {capacity}% ",
+        "format": "{icon}  {capacity}% ",
+        "format-charging": "󰂄  {capacity}% ",
+        "format-plugged": "󰚥  {capacity}% ",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "interval": 5
 },

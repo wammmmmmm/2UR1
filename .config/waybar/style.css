@@ -1,28 +1,26 @@
-@define-color black #000000;
-@define-color white #ffffff;
-@define-color blue #00869b;
-@define-color ored #ff2700;
-@define-color red #ff0000;
-@define-color yellow #fffd8c;
-@define-color green #a1ff2e;
-@define-color cyan #14E4FF;
-@define-color blu #9cc4f4; 
+@define-color black #0A0908;
+@define-color blue #22333B;
+@define-color white #EAE0D5;
+@define-color beige #C6AC8F;
+@define-color brown #5E503F;
 
-@define-color active @red;
-@define-color alert @yellow;
-@define-color warning @red;
-@define-color good @green;
+@define-color active #d90429;
+@define-color alert #ff006e;
+@define-color warning #ff006e;
+@define-color good #2ec4b6;
 
 @define-color fallback-color @white;
 
-@define-color clock-background @black;
-@define-color custom-border @white;
-@define-color custom-text @white;
+@define-color clock-background @blue;
+@define-color clock-border @white;
+@define-color clock-text @white;
 
-@define-color workspaces-active-color @white;
-@define-color workspaces-urgent-color @red;
+@define-color workspaces-button-background @blue; 
+@define-color workspaces-button-active @white;
+@define-color workspaces-button-urgent @alert;
+@define-color workspaces-button-text @white;
 
-@define-color workspaces-background @black;
+@define-color workspaces-background @blue;
 @define-color workspaces-border @white;
 @define-color workspaces-text @white;
 
@@ -31,17 +29,17 @@
 @define-color waybar-bottom-border @no;
 @define-color waybar-border @no;
 
-@define-color ppf-powersaver-background @black;
-@define-color ppf-powersaver-border @black;
-@define-color ppf-powersaver-text @white;
-@define-color ppf-performance-background @black;
-@define-color ppf-performance-border @black;
-@define-color ppf-performance-text @white;
-@define-color ppf-balanced-background @black;
-@define-color ppf-balanced-border @black;
-@define-color ppf-balanced-text @white;
+@define-color ppf-powersaver-background @brown;
+@define-color ppf-powersaver-border @beige;
+@define-color ppf-powersaver-text @beige;
+@define-color ppf-performance-background @brown;
+@define-color ppf-performance-border @beige;
+@define-color ppf-performance-text @beige;
+@define-color ppf-balanced-background @brown;
+@define-color ppf-balanced-border @beige;
+@define-color ppf-balanced-text @beige;
 
-@define-color middlemodules-background @black;
+@define-color middlemodules-background @brown;
 @define-color middlemodules-text @white;
 
 window#waybar {
@@ -53,18 +51,29 @@ window#waybar {
 }
 
 #workspaces button.active {
-	color: @workspaces-active-color;
+	color: @workspaces-button-active;
+	border-radius:20px
+}
+
+#workspaces button {
+	background-color: @workspaces-button-background;
+	color: @workspaces-button-text;
+	border-radius: 20px;
 }
 
 #workspaces button.urgent {
-	color: @workspaces-urgent-color;
+	color: @workspaces-button-urgent;
 }
+
+#workspaces button:hover {
+	color: @blue; 
+} 
 
 #workspaces {
 	background-color: @workspaces-background;
 	border: 2px solid @workspaces-border;
-	color: @workspaces-text;
 	border-radius: 20px;
+	margin-left: 8px;
 }
 
 #network,
