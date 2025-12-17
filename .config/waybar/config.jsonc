@@ -56,16 +56,18 @@
 "hyprland/workspaces": {
         "on-click": "activate",  
         "persistent-workspaces": {
-                "2": [],
                 "1": [],
+                "2": [],
                 "3": [],
                 },
          "format": " {icon} ",
          "format-icons": {
-             "urgent": "⦾",
-             "active": "⦿",
-// ➕
-             "default": "󠁯󠁯󠁯∙",
+		"1": "1",
+		"2": "2",
+		"3": "3",
+		"urgent": "",
+		// "active": "",
+		// "default": ""
                 }
 },
 
@@ -81,9 +83,9 @@
   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
   "tooltip": true,
   "format-icons": {
-    "performance": "✿",
-    "balanced": "✤",
-    "power-saver": "✣"
+    "performance": "🌑",
+    "balanced": "🌓",
+    "power-saver": "🌔"
   }
 },
 
@@ -96,11 +98,11 @@
                     "weeks-pos"     : "right",
                     "on-scroll"     : 1,
                     "format": {
-                              "months":     "<span color='#ffffff'><b>{}</b></span>",
-                              "days":       "<span color='#ffffff'><b>{}</b></span>",
-                              "weeks":      "<span color='#a1ff2e'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#00f7ff'><b>{}</b></span>",
-                              "today":      "<span color='#f50538'><b><u>{}</u></b></span>"
+                              "months":     "<span color='#EAE0D5'><b>{}</b></span>",
+                              "days":       "<span color='#EAE0D5'><b>{}</b></span>",
+                              "weeks":      "<span color='#C6AC8F'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#C6AC8F'><b>{}</b></span>",
+                              "today":      "<span color='#2ec4b6'><b><u>{}</u></b></span>"
                               }
                     },
         "actions":  {

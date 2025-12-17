@@ -16,7 +16,8 @@
 @define-color clock-text @white;
 
 @define-color workspaces-button-background @blue; 
-@define-color workspaces-button-active @white;
+@define-color workspaces-button-active-background @white;
+@define-color workspaces-button-active @blue;
 @define-color workspaces-button-urgent @alert;
 @define-color workspaces-button-text @white;
 
@@ -42,6 +43,10 @@
 @define-color middlemodules-background @brown;
 @define-color middlemodules-text @white;
 
+@define-color tooltip-background @blue;
+@define-color tooltip-color #ffffff;
+@define-color tooltip-color-border @white;
+
 window#waybar {
 	
 	background-color: @waybar-background; 
@@ -52,7 +57,8 @@ window#waybar {
 
 #workspaces button.active {
 	color: @workspaces-button-active;
-	border-radius:20px
+	background-color: @workspaces-button-active-background;
+	border-radius:14px
 }
 
 #workspaces button {
@@ -180,4 +186,9 @@ window#waybar {
 	padding: 10px;	
 }
 
-
+tooltip {
+	background: @tooltip-background;
+	color: @tooltip-color;
+	border-radius: 20px;
+	border: 2px solid @tooltip-color-border;
+}
