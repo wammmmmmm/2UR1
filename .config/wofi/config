@@ -1,9 +1,10 @@
 # ~/.config/wofi/config
 
 show = drun
-width = 610
-height = 400
-x = 615
+width = 304
+height = 600
+# height = 428
+x = 91
 y = 0
 location = center
 prompt = Aphos

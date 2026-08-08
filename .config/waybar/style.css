@@ -1,47 +1,48 @@
-@define-color black #0A0908;
-@define-color blue #22333B;
-@define-color white #EAE0D5;
-@define-color beige #C6AC8F;
-@define-color brown #5E503F;
+@define-color black #000000;
+@define-color blue #0000ff;
+@define-color green #00ff00;
+@define-color yellow #ffff00;
+@define-color white #ffffff;
+@define-color red #ff0000;
 
-@define-color active #d90429;
-@define-color alert #ff006e;
-@define-color warning #ff006e;
-@define-color good #2ec4b6;
+@define-color active @green;
+@define-color alert @yellow;
+@define-color warning @red;
+@define-color good @blue;
 
-@define-color fallback-color @white;
+@define-color fallback-color @black;
 
 @define-color clock-background @blue;
 @define-color clock-border @white;
 @define-color clock-text @white;
 
-@define-color workspaces-button-background @blue; 
-@define-color workspaces-button-active-background @white;
+@define-color workspaces-button-background @no; 
+@define-color workspaces-button-active-background @green;
 @define-color workspaces-button-active @blue;
 @define-color workspaces-button-urgent @alert;
 @define-color workspaces-button-text @white;
 
-@define-color workspaces-background @blue;
-@define-color workspaces-border @white;
+@define-color workspaces-background @no;
+@define-color workspaces-border @no;
 @define-color workspaces-text @white;
 
-@define-color waybar-background @no;
+@define-color waybar-background @black;
 @define-color waybar-top-border @no;
-@define-color waybar-bottom-border @no;
+@define-color waybar-bottom-border @white;
 @define-color waybar-border @no;
 
-@define-color ppf-powersaver-background @brown;
-@define-color ppf-powersaver-border @beige;
-@define-color ppf-powersaver-text @beige;
-@define-color ppf-performance-background @brown;
-@define-color ppf-performance-border @beige;
-@define-color ppf-performance-text @beige;
-@define-color ppf-balanced-background @brown;
-@define-color ppf-balanced-border @beige;
-@define-color ppf-balanced-text @beige;
+@define-color ppf-powersaver-background @no;
+@define-color ppf-powersaver-border @no;
+@define-color ppf-powersaver-text @green;
+@define-color ppf-performance-background @no;
+@define-color ppf-performance-border @no;
+@define-color ppf-performance-text @blue;
+@define-color ppf-balanced-background @no;
+@define-color ppf-balanced-border @no;
+@define-color ppf-balanced-text @green;
 
-@define-color middlemodules-background @brown;
-@define-color middlemodules-text @white;
+@define-color middlemodules-background @no;
+@define-color middlemodules-text white;
 
 @define-color tooltip-background @blue;
 @define-color tooltip-color #ffffff;
@@ -50,21 +51,21 @@
 window#waybar {
 	
 	background-color: @waybar-background; 
-	border-bottom: 0px solid @waybar-bottom-border;
-	border-top: 0px solid @waybar-top-border;
+	border-bottom: 2px solid @waybar-bottom-border;
+	border-top: 2px solid @waybar-top-border;
 	border: 0px solid @waybar-border;
 }
 
 #workspaces button.active {
 	color: @workspaces-button-active;
 	background-color: @workspaces-button-active-background;
-	border-radius:14px
+	border-radius:0px
 }
 
 #workspaces button {
 	background-color: @workspaces-button-background;
 	color: @workspaces-button-text;
-	border-radius: 20px;
+	border-radius: 0px;
 }
 
 #workspaces button.urgent {
@@ -72,13 +73,14 @@ window#waybar {
 }
 
 #workspaces button:hover {
-	color: @blue; 
+	background-color: @no; 
+	color: @green; 
 } 
 
 #workspaces {
 	background-color: @workspaces-background;
-	border: 2px solid @workspaces-border;
-	border-radius: 20px;
+	border: 0px solid @workspaces-border;
+	border-radius: 0px;
 	margin-left: 8px;
 }
 
@@ -92,8 +94,12 @@ window#waybar {
 #custom-cava,
 #battery {
 	padding: 0 10px;
-	color: @middlemodules-background;
-	background-color: @middlemodules-text;
+	color: @middlemodules-text;
+	background-color: @middlemodules-background;
+}
+
+#custom-cava {
+	color: @blue;
 }
 
 #custom-weather { 
@@ -114,11 +120,16 @@ window#waybar {
 }
 
 #battery.charging {
-	color: @good;
+	color: @green;
+}
+
+
+#battery.plugged {
+	color: @green;
 }
 
 #battery {
-	border-radius: 0px 20px 20px 0px;
+	border-radius: 0px 0px 0px 0px;
 	margin-right: 4px;
 }
 
@@ -153,42 +164,42 @@ window#waybar {
 
 #power-profiles-daemon.performance {
 	background-color: @ppf-performance-background;
-        border-radius: 20px;
+        border-radius: 0px;
         color: @ppf-performance-text;
-        border: 2px solid @ppf-powersaver-border;
+        border: 0px solid @ppf-powersaver-border;
 	font-size: 16px;
 	padding: 10px;
 }
 
 #power-profiles-daemon.balanced {
         background-color: @ppf-balanced-background;
-        border-radius: 20px;
+        border-radius: 0px;
         color: @ppf-balanced-text;
-        border: 2px solid @ppf-powersaver-border;
+        border: 0px solid @ppf-powersaver-border;
 	font-size: 16px;
 	padding: 10px;
 }
 
 #power-profiles-daemon.power-saver {
 	background-color: @ppf-powersaver-background;
-	border-radius: 20px;
+	border-radius: 0px;
 	color: @ppf-powersaver-text;
-	border: 2px solid @ppf-powersaver-border;
+	border: 0px solid @ppf-powersaver-border;
 	font-size: 16px;
 	padding: 10px;
 }
 
 #clock { 
 	background-color: @clock-background;
-	border: 2px solid @clock-border;
+	border: 0px solid @clock-border;
 	color: @clock-text;
-	border-radius: 20px;
+	border-radius: 0px;
 	padding: 10px;	
 }
 
 tooltip {
 	background: @tooltip-background;
 	color: @tooltip-color;
-	border-radius: 20px;
-	border: 2px solid @tooltip-color-border;
+	border-radius: 0px;
+	border: 0px solid @tooltip-color-border;
 }

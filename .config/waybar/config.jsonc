@@ -16,7 +16,7 @@
 
         "height": 10, // remove for automatic height
 
-	"margin": 5,
+	"margin": 0,
 
         // "width": 1280,
 
@@ -29,15 +29,15 @@
 
 
         "modules-left": [
-        	 
+        	"power-profiles-daemon", "hyprland/workspaces", "custom/spacing", "custom/spacing", "custom/cava"
 	],
 
         "modules-center": [
-		"power-profiles-daemon", "hyprland/workspaces", "custom/spacing", "network", "bluetooth", "pulseaudio", "backlight", "temperature", "cpu", "custom/cava", "tray", "battery","custom/spacing", "clock",	
+		"network", "bluetooth", "pulseaudio", "backlight", "temperature", "cpu",	
 	],
 
         "modules-right": [
-		
+		"tray", "battery", "clock", 
 	],
 
 
@@ -59,12 +59,16 @@
                 "1": [],
                 "2": [],
                 "3": [],
-                },
+		"4": [],
+		"5": [],
+	},
          "format": " {icon} ",
          "format-icons": {
 		"1": "1",
 		"2": "2",
 		"3": "3",
+		"4": "4",
+		"5": "5", 
 		"urgent": "",
 		// "active": "",
 		// "default": ""
@@ -72,20 +76,20 @@
 },
 
 "custom/cava": {	
-	"format": "{}",
+	"format": "{}   ",
 	"exec": "~aphos/.config/waybar/cava.sh",
 	"on-click": "pear-desktop",
 	"tooltip": false,
 },
 
 "power-profiles-daemon": {
-  "format": " {icon} ",
+  "format": " {icon}",
   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
   "tooltip": true,
   "format-icons": {
-    "performance": "🌑",
-    "balanced": "🌓",
-    "power-saver": "🌔"
+    "performance": ">>> Zur1",
+    "balanced": ">> Zvr1",
+    "power-saver": "> Zur1"
   }
 },
 
@@ -98,11 +102,11 @@
                     "weeks-pos"     : "right",
                     "on-scroll"     : 1,
                     "format": {
-                              "months":     "<span color='#EAE0D5'><b>{}</b></span>",
-                              "days":       "<span color='#EAE0D5'><b>{}</b></span>",
-                              "weeks":      "<span color='#C6AC8F'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#C6AC8F'><b>{}</b></span>",
-                              "today":      "<span color='#2ec4b6'><b><u>{}</u></b></span>"
+                              "months":     "<span color='#ffffff'><b>{}</b></span>",
+                              "days":       "<span color='#ffffff'><b>{}</b></span>",
+                              "weeks":      "<span color='#ffff00'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#00ff00'><b>{}</b></span>",
+                              "today":      "<span color='#ff0000'><b><u>{}</u></b></span>"
                               }
                     },
         "actions":  {
@@ -123,7 +127,7 @@
 	},
 
 "pulseaudio": {
-        "format": "{icon} {volume}%" ,
+        "format": "{icon}  {volume}%" ,
         "format-bluetooth": "󰂰  {volume}%",
         "format-bluetooth-muted": "󰂲  {volume}%",
         "format-muted": "󰝟  {volume}%",
@@ -150,17 +154,17 @@
 },
 
 "backlight": {
-        "format": "{icon} {percent}%",
+        "format": "{icon}  {percent}%",
         "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "],
         "on-scroll-up": "brightnessctl set 1%-",
         "on-scroll-down": "brightnessctl set +1%"
 },
 
 "network": {
-        "format-wifi": "  󰖩  {signalStrength}%",
-        "format-ethernet": "  󰈀  {bandwidthDownBits}",
-        "format-linked": "  󰈀  Wan",
-        "format-disconnected": "  󰖪  off",
+        "format-wifi": "  󰖩   {signalStrength}%",
+        "format-ethernet": "  󰈀   {bandwidthDownBits}",
+        "format-linked": "  󰈀   Wan",
+        "format-disconnected": "  󰖪   off",
 	"on-click-right": "sh -c 'if nmcli radio wifi | grep -q \"enabled\"; then nmcli radio wifi off; else nmcli radio wifi on; fi'",
         "tooltip-format": "{essid}",
 	"on-click": "kitty -e nmtui",
@@ -187,24 +191,37 @@
 },
 
 "cpu": {
-        "format": " 󰘚  {usage}%",
+        "format": " 󰘚   {usage}%",
         "tooltip": true,
         "interval": 5,
         "on-click": "kitty -e btop",
 },
 
+//"battery": {
+//        "states": {
+//            "good": 95,
+//            "warning": 30,
+//           "critical": 15
+//       },
+//       "format": "{icon}  {capacity}% ",
+//       "format-charging": "󰂄  {capacity}% ",
+//       "format-plugged": "󰚥  {capacity}% ",
+//       "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+//       "interval": 5
+//},
+
 "battery": {
         "states": {
             "good": 95,
             "warning": 30,
-            "critical": 15
+            "critical": 15,
         },
-        "format": "{icon}  {capacity}% ",
-        "format-charging": "󰂄  {capacity}% ",
-        "format-plugged": "󰚥  {capacity}% ",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format": "[{icon}]  {capacity}% ",
+        "format-charging": "[    charging...    ]  {capacity}% ",
+        "format-plugged": "[    charging...    ]  {capacity}% ",
+        "format-icons": ["                      ", "          ◼          ", "         ◼◼         ", "        ◼◼◼        ", "       ◼◼◼◼       ", "      ◼◼◼◼◼      ", "     ◼◼◼◼◼◼     ", "    ◼◼◼◼◼◼◼    ", "   ◼◼◼◼◼◼◼◼   ", "  ◼◼◼◼◼◼◼◼◼  ", " ◼◼◼◼◼◼◼◼◼◼ ", "◼◼◼◼◼◼◼◼◼◼◼"],
         "interval": 5
-},
+}
 
 } 
 ]
